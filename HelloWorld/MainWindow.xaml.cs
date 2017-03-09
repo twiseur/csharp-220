@@ -23,17 +23,35 @@ namespace HelloWorld
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Models.User user = new Models.User();
+
         public MainWindow()
         {
             InitializeComponent();
-            
+
             // Exercise 1
             //WindowState = WindowState.Maximized;
         }
 
+        public override void EndInit()
+        {
+            base.EndInit();
+            uxContainer.DataContext = user;
+        }
+
         private void uxSubmit_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Submitting password: " + uxPassword.Text);
+
+            int x = 1;
+            x = x / (x - 1); // Induce a DivideByZeroException
+
+            MessageBox.Show("Submitting password: " + uxPassword.Password);
+
+            var window = new SecondWindow();
+            window.AddUser(uxName.Text, uxPassword.Password);
+            Application.Current.MainWindow = window;
+            Close();
+            window.Show();
         }
 
         private void uxName_TextChanged(object sender, TextChangedEventArgs e)
@@ -41,14 +59,14 @@ namespace HelloWorld
             updateSubmitButton();
         }
 
-        private void uxPassword_TextChanged(object sender, TextChangedEventArgs e)
+        private void uxPassword_PasswordChanged(object sender, RoutedEventArgs e)
         {
             updateSubmitButton();
         }
 
         private void updateSubmitButton()
         {
-            if ((uxName.Text != "") && (uxPassword.Text != ""))
+            if ((uxName.Text != "") && (uxPassword.Password != ""))
             {
                 uxSubmit.IsEnabled = true;
             }
@@ -57,5 +75,6 @@ namespace HelloWorld
                 uxSubmit.IsEnabled = false;
             }
         }
+
     }
 }

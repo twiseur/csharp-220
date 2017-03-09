@@ -5,19 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorld"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid VerticalAlignment="Center">
-        <StackPanel>
+        Title="MainWindow" Height="350" Width="525"
+        Background="Gray">
+    <Grid VerticalAlignment="Top">
+        <StackPanel x:Name="uxContainer" Background="LightBlue">
             <TextBlock>Enter Name:</TextBlock>
-            <TextBox x:Name="uxName" TextChanged="uxName_TextChanged"></TextBox>
+            <TextBox x:Name="uxName" 
+                     Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" TextChanged="uxName_TextChanged">
+            </TextBox>
+            <Label x:Name="uxNameError"
+                   Content="{Binding NameError, UpdateSourceTrigger=PropertyChanged}"></Label>
             <TextBlock>Enter Password:</TextBlock>
-            <TextBox x:Name="uxPassword" TextChanged="uxPassword_TextChanged"></TextBox>
+            <PasswordBox x:Name="uxPassword" PasswordChanged="uxPassword_PasswordChanged"></PasswordBox>
             <Button x:Name="uxSubmit" Click="uxSubmit_Click" IsEnabled="False" >Submit</Button>
             <Button>
                 <StackPanel Orientation="Horizontal">
                     <Image Source="images/ic_thumb_up_black_24dp_2x.png" />
                     <TextBlock Text="Thumbs Up" />
                 </StackPanel>
+            </Button>
+            <Button>
+                <CheckBox x:Name="checkBox" Content="Check me!"/>
             </Button>
         </StackPanel>
     </Grid>
