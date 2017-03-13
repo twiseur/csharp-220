@@ -7,11 +7,15 @@
         mc:Ignorable="d"
         Title="SecondWindow" Height="300" Width="300">
     <Grid>
-        <ListView x:Name="uxList" ItemsSource="{Binding Source= users}">
+        <ListView x:Name="uxList">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="User Name" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding= "{Binding Path=Password}" Header="Password" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="100">
+                        <GridViewColumnHeader Content="Name" Click="NameColumnHeader_OnClick"/>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Password}" Width="100">
+                        <GridViewColumnHeader Content="Password" Click="PasswordColumnHeader_OnClick"/>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

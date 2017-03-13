@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-// CSHP 220 Assignment 1
+// CSHP 220 Homework 3
 // Author: Thaddee Wiseur
 
 namespace HelloWorld

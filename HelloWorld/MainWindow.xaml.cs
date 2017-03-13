@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity;
 
-// CSHP 220 Assignment 1
+// CSHP 220 Homework 3
 // Author: Thaddee Wiseur
 
 namespace HelloWorld
@@ -28,22 +29,19 @@ namespace HelloWorld
         public MainWindow()
         {
             InitializeComponent();
-
-            // Exercise 1
-            //WindowState = WindowState.Maximized;
         }
 
         public override void EndInit()
         {
             base.EndInit();
             uxContainer.DataContext = user;
+            var sample = new SampleEntities();
+            sample.Users.Load();
+            uxList.ItemsSource = sample.Users.Local;
         }
 
         private void uxSubmit_Click(object sender, RoutedEventArgs e)
         {
-
-            int x = 1;
-            x = x / (x - 1); // Induce a DivideByZeroException
 
             MessageBox.Show("Submitting password: " + uxPassword.Password);
 
