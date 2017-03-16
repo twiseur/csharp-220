@@ -1,0 +1,22 @@
+﻿<Window x:Class="HelloWorld.NavigatorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelloWorld"
+        mc:Ignorable="d"
+        Title="NavigatorWindow" Height="300" Width="300">
+    <Window.Background>
+        <ImageBrush ImageSource="images/world.jpg" />
+        <!-- Pick any image that you have-->
+    </Window.Background>
+    <StackPanel>
+        <TextBlock>
+        <Run Foreground="Black">Enter an address (</Run>
+        <Run Foreground="Red">Don't forget http:// </Run>
+        <Run Foreground="Black">)</Run>
+        </TextBlock>
+        <TextBox x:Name="uxURLTextBox" Text="http://" TextChanged="uxURLTextBox_TextChanged"/>
+        <Button x:Name="uxGoButton"  Content="Go" Click="uxGoButton_Click"/>
+    </StackPanel>
+</Window>
