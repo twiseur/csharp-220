@@ -1,0 +1,44 @@
+﻿<Application x:Class="InventoryApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:InventoryApp"
+             xmlns:clr="clr-namespace:System;assembly=mscorlib"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <clr:String x:Key="ApplicationName">Furniture Manager</clr:String>
+        <clr:String x:Key="FurnitureWindowTitle">Furniture</clr:String>
+        <clr:String x:Key="FurnitureWindowDescription">Description:</clr:String>
+        <clr:String x:Key="FurnitureWindowPrice">Price:</clr:String>
+        <clr:String x:Key="FurnitureWindowQuantity">Quantity:</clr:String>
+        <clr:String x:Key="FurnitureWindowCost">Cost:</clr:String>
+        <clr:String x:Key="FurnitureWindowAddButton">Add</clr:String>
+        <clr:String x:Key="FurnitureWindowUpdateButton">Update</clr:String>
+        <clr:String x:Key="FurnitureWindowCancelButton">Cancel</clr:String>
+        <clr:String x:Key="ListViewIdHeader">Item Id</clr:String>
+        <clr:String x:Key="ListViewDescriptionHeader">Description</clr:String>
+        <clr:String x:Key="ListViewPriceHeader">Price</clr:String>
+        <clr:String x:Key="ListViewQuantityHeader">Quantity</clr:String>
+        <clr:String x:Key="ListViewCostHeader">Cost</clr:String>
+        <clr:String x:Key="ListViewValueHeader">Value</clr:String>
+        <clr:String x:Key="FileAdd">_Add</clr:String>
+        <clr:String x:Key="FileModify">_Update</clr:String>
+        <clr:String x:Key="FileDelete">_Delete</clr:String>
+        <clr:String x:Key="FileList">_List All</clr:String>
+        <clr:String x:Key="FileQuit">_Quit</clr:String>
+        <clr:String x:Key="AddToolTip">Add a new type furniture</clr:String>
+        <clr:String x:Key="ModifyToolTip">Update the information about a type of furniture</clr:String>
+        <clr:String x:Key="DeleteToolTip">Delete a type of furniture</clr:String>
+        <clr:String x:Key="ListToolTip">List all furnitures</clr:String>
+        <BitmapImage x:Key="AddImage" UriSource="images/add.png"/>
+        <BitmapImage x:Key="ModifyImage" UriSource="images/edit.png"/>
+        <BitmapImage x:Key="DeleteImage" UriSource="images/delete.png"/>
+        <BitmapImage x:Key="ListImage" UriSource="images/list.png"/>
+        <Style x:Key="ImageDisabled" TargetType="Image">
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.25"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Application.Resources>
+</Application>
